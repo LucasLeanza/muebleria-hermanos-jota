@@ -4,17 +4,135 @@
     --color-background: #F5E6D3; /* Fondos principales, fotografía */
     --color-detalles: #D4A437; /* Detalles premium, acentos */
     --color-detalles-secundario: #C47A6D; /* Acentos suaves, detalles femeninos */
+    --color-blanco: #FFFFFF; /* Texto sobre fondos oscuros, elementos de UI */
+    --color-negro: #000000; /* Texto principal, elementos de UI */
     --fuente-principal: 'Inter', sans-serif; /* Texto del cuerpo, elementos de UI, aplicaciones digitales */
     --fuente-secundaria: 'Playfair Display', serif; /* Títulos editoriales, citas destacadas, contenido premium */
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
 }
 h1 {
     font-family: var(--fuente-secundaria);
     color: var(--color-primario);
     text-transform: uppercase;
     line-height: 0.1em;
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 3rem); /*Nunca menos de 1.5rem, idealmente 5vw, nunca más de 3rem*/
 }
 p {
     font-family: var(--fuente-principal);
-    font-weight: 1rem;
+    font-size: 1rem;
     line-height: 1.6;
+}
+
+/* Catalogo */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;           /* Permite que las tarjetas pasen a la siguiente línea */
+    gap: 24px;                 /* Espacio entre tarjetas */
+    justify-content: center;   /* Centra las tarjetas horizontalmente */
+    padding: 15px;
+}
+.productos-card {
+    flex: 1 1 220px;           /* Las tarjetas ocupan mínimo 220px y crecen si hay espacio */
+    max-width: 260px;          /* Limita el ancho máximo */
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    background: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+@media (min-width: 1024px) {
+    .productos-card {
+        flex: 1 1 300px;
+        max-width: 320px;
+    }
+}
+.productos-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+.producto-img {
+    position: relative;
+}
+.producto-img img {
+    width: 100;
+    display: block;
+}
+.producto-nombre {
+    font-family: var(--fuente-principal);
+    font-size: 1.4rem;
+    color: var(--color-primario);
+}
+.producto-precio {
+    font-family: var(--fuente-principal);
+    font-size: 1.4rem;
+    color: var(--color-primario);
+}
+.agregar-carrito {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.ver-detalles {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+/* HEADER PLACEHOLDER */
+header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        padding-right: 1rem;
+    }
+}
+
+/* FOOTER PLACEHOLDER */
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
