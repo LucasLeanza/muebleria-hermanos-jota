@@ -81,7 +81,9 @@ catalogoMuebles.forEach(producto => {
     card.classList.add("productos-card");
     
     //Imagen
-    let imgContainer = document.createElement("div");
+    //Creo la imagen como un <a> para que al hacer click en la foto también lleve a la página del producto.
+    let imgContainer = document.createElement("a");
+    imgContainer.href = "#"
     imgContainer.classList.add("img-container");
 
     let img = document.createElement("img");
