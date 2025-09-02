@@ -1,0 +1,20 @@
+:root {
+    --color-primario: #A0522D; /* Color principal de marca, títulos principales */
+    --color-secundario: #87A96B; /* Acento secundario, sustentabilidad */
+    --color-background: #F5E6D3; /* Fondos principales, fotografía */
+    --color-detalles: #D4A437; /* Detalles premium, acentos */
+    --color-detalles-secundario: #C47A6D; /* Acentos suaves, detalles femeninos */
+    --fuente-principal: 'Inter', sans-serif; /* Texto del cuerpo, elementos de UI, aplicaciones digitales */
+    --fuente-secundaria: 'Playfair Display', serif; /* Títulos editoriales, citas destacadas, contenido premium */
+}
+h1 {
+    font-family: var(--fuente-secundaria);
+    color: var(--color-primario);
+    text-transform: uppercase;
+    line-height: 0.1em;
+}
+p {
+    font-family: var(--fuente-principal);
+    font-weight: 1rem;
+    line-height: 1.6;
+}
