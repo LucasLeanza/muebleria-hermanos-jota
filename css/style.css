@@ -16,89 +16,143 @@ body {
     margin: 0;
     padding: 0;
 }
-h1 {
+
+/* Header Catalogo */
+.catalogo-encabezado {
+    text-align: center;
+    padding: 2.5rem 1rem 1.75rem;
+}
+.catalogo-titulo {
     font-family: var(--fuente-secundaria);
     color: var(--color-primario);
-    text-transform: uppercase;
-    line-height: 0.1em;
-    text-align: center;
-    font-size: clamp(1.5rem, 5vw, 3rem); /*Nunca menos de 1.5rem, idealmente 5vw, nunca más de 3rem*/
+    font-weight: 400;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.2;
+    margin: 0;
 }
-p {
+.catalogo-titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-detalles);
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+.catalogo-bajada {
     font-family: var(--fuente-principal);
-    font-size: 1rem;
+    max-width: 68ch;
+    margin: 12px auto 0;
     line-height: 1.6;
+    color: var(--color-detalles-secundario);
+}
+/* Barra de búsqueda */
+.catalogo-busqueda {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+.catalogo-busqueda-input {
+    width: min(700px, 92%);
+    padding: 12px 16px;
+    border-radius: 30px;
+    border: 1px solid #d0d5dd;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+    font-size: 1rem;
+    font-family: var(--fuente-principal);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+.catalogo-busqueda-input::placeholder {
+    color: #98a2b3;
+}
+.catalogo-busqueda-input:focus {
+    border-color: var(--color-primario);
 }
 
 /* Catalogo */
 .productos-container {
     display: flex;
-    flex-wrap: wrap;           /* Permite que las tarjetas pasen a la siguiente línea */
-    gap: 24px;                 /* Espacio entre tarjetas */
-    justify-content: center;   /* Centra las tarjetas horizontalmente */
-    padding: 15px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
 }
 .productos-card {
-    flex: 1 1 220px;           /* Las tarjetas ocupan mínimo 220px y crecen si hay espacio */
-    max-width: 260px;          /* Limita el ancho máximo */
-    box-sizing: border-box;
-    margin-bottom: 24px;
-    background: var(--color-blanco);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 16px;
-}
-@media (min-width: 1024px) {
-    .productos-card {
-        flex: 1 1 300px;
-        max-width: 320px;
-    }
-}
-.productos-card img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
-    object-fit: contain;
-    margin-bottom: 12px;
-}
-.producto-img {
+    justify-content: space-between;
+    align-items: stretch;
+    flex: 1 1 320px;
+    max-width: 360px;
+    background: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    padding: 0;
+    margin-bottom: 24px;
+    overflow: hidden;
     position: relative;
 }
-.producto-img img {
-    width: 100;
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.producto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    object-fit: contain;
+}
+.producto-info {
+    padding: 16px 16px 0 16px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px
 }
 .producto-nombre {
     font-family: var(--fuente-principal);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--color-primario);
+    margin: 0 0 4px 0;
 }
 .producto-precio {
     font-family: var(--fuente-principal);
-    font-size: 1.4rem;
-    color: var(--color-primario);
+    font-size: 1.3rem;
+    color: var(--color-negro);
+    font-weight: bold;
+    margin: 0 0 12px 0;
 }
-.agregar-carrito {
+.producto-botones {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+.ver-detalles, .agregar-carrito {
+    flex: 1 1 0;
     background-color: var(--color-primario);
     color: var(--color-blanco);
     border: none;
-    padding: 10px 20px;
+    padding: 10px 0;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
+    font-family: var(--fuente-principal);
+    transition: background 0.2s;
 }
 .ver-detalles {
     background-color: var(--color-secundario);
-    color: var(--color-blanco);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
+}
+.ver-detalles:hover, .agregar-carrito:hover {
+    background-color: var(--color-detalles);
 }
 
 

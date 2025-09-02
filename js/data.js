@@ -77,45 +77,67 @@ const container = document.getElementById("productos-container");
 
 catalogoMuebles.forEach(producto => {
     //Creo la tarjeta
-    let card = document.createElement("a");
+    let card = document.createElement("div");
     card.classList.add("productos-card");
-    card.href = "#";
     
     //Imagen
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("img-container");
+
     let img = document.createElement("img");
     img.classList.add("producto-img");
     img.src = producto.img;
     img.alt = producto.nombre;
 
-    //Nombre
+    imgContainer.appendChild(img);
+
+    //Info
+    //Creo un div .info para agrupar nombre, precio y descripcion
+    let info = document.createElement("div");
+    info.classList.add("producto-info");
+
+    //Creo cada elemento y le asigno clases para dar estilos por separado
     let nombre = document.createElement("h3");
-    nombre.classList.add("producto-nombre")
+    nombre.classList.add("producto-nombre");
     nombre.textContent = producto.nombre;
 
-    //Precio
+    let descripcion = document.createElement("p");
+    descripcion.classList.add("producto-descripcion");
+    descripcion.textContent = producto.descripcion;
+
     let precio = document.createElement("p");
     precio.classList.add("producto-precio");
-    precio.textContent = `$${producto.precio}`
+    precio.textContent = `$${producto.precio.toLocaleString()}`
 
-   
-    //Boton Ver Detalles
+    //Agrego nombre, precio y descripcion al div .info
+    info.appendChild(nombre);
+    info.appendChild(descripcion);
+    info.appendChild(precio);
+
+    //Botones
+    //Creo un div .botones para agrupar ambos botones
+    let botones = document.createElement("div");
+    botones.classList.add("producto-botones");
+
+    //Creo cada boton
     let botonDetalles = document.createElement("button");
     botonDetalles.textContent = "Ver Detalles";
     botonDetalles.classList.add("ver-detalles");
 
-    //Boton Agregar al carrito
-    let boton = document.createElement("button");
-    boton.textContent = "Agregar al carrito";
-    boton.classList.add("agregar-carrito");
+    let botonCarrito = document.createElement("button");
+    botonCarrito.textContent = "Agregar al Carrito";
+    botonCarrito.classList.add("agregar-carrito");
 
+    //Agrego los botones al div .botones
+    botones.appendChild(botonDetalles);
+    botones.appendChild(botonCarrito);
 
     //Agrego elementos a la tarjeta
-    card.appendChild(nombre);
-    card.appendChild(precio);
-    card.appendChild(img);
-    card.appendChild(botonDetalles);
-    card.appendChild(boton);
+    card.appendChild(imgContainer);
+    card.appendChild(info);
+    card.appendChild(botones);
 
     //Agrego la tarjeta al contenedor
     container.appendChild(card);
 });
+
