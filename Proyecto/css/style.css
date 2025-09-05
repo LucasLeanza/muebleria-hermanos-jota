@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "sans-serif", Georgia;
+  background-color: #f4f0ec;
+  color: #3d2a1f;
+  line-height: 1.6;
+}
+
+/*Barra de navegación*/
+
+.header {
+    display: flex;
+    align-items: center;     
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+   background-color: white;
+}
+
+
+.logo {
+    width: 60px;
+    margin-left: 50px;
+}
+
+
+.nav {
+    position: absolute;
+    left: 40%;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;           
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+
+ul li a {
+    text-decoration: none;
+    color: #A0522D;     
+    font-weight: 500;
+}
+
+/*Menú principal*/
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  gap: 2rem;
+}
+
+main section:first-child {
+  flex: 1;
+  max-width: 600px;
+}
+
+main h1 {
+  font-size: 3rem;
+  color: #7a3e27;
+  margin-bottom: 1rem;
+}
+
+main h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: #556b2f;
+  margin-bottom: 2rem;
+}
+
+main p {
+  font-size: 1rem;
+  color: #4a4a6a;
+  margin-bottom: 2.5rem;
+}
+
+/* ======== Botones ======== */
+main a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-right: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main a:first-of-type {
+  background-color: #7a3e27;
+  color: #fff;
+}
+
+main a:first-of-type:hover {
+  background-color: #5c2d1e;
+}
+
+main a:last-of-type {
+  border: 2px solid #7a3e27;
+  color: #7a3e27;
+  background: transparent;
+}
+
+main a:last-of-type:hover {
+  background-color: #7a3e27;
+  color: #fff;
+}
+
+main section:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
