@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <title>Contacto</title>
+</head>
+
+  <header class="header">
+    <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Colección</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+  <main>
+  <form id="contacto"> <!-- action = "enviar datos backend" method = "POST"-->
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" required><br><br>
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" placeholder="Escriba su email" required><br><br>
+
+    <label for="mensaje">Mensaje:</label><br>
+    <textarea id="mensaje" name="mensaje" placeholder="Escriba su inquietud aqui" rows="5" maxlength="200" required></textarea><br><br>
+
+    <button id="botonEnviar" type="submit">Enviar</button>
+  </form>
+
+  <p id="resultado"></p>
+  </main>
+
+  <!-- Enlazamos el archivo de JS -->
+  <script src="/js/contacto.js"></script>
+</body>
+
+<footer>
+    <section>
+            <h3>Locales</h3>
+            <address>
+                <p>Av San Juan 2847</p>
+                <p>San Cristóbal, CABA</p>
+            </address>
+        </section>
+</footer>
+</html>
