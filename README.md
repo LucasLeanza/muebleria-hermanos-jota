@@ -1,4 +1,4 @@
-# Proyecto "Mueblería Hermanos Jota
+# Proyecto "Mueblería Hermanos Jota"
 
 ## Integrantes
 
