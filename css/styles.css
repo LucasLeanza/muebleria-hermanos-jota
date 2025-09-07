@@ -84,6 +84,11 @@ header {
     transition: max-height .3s ease, opacity .25s ease, visibility .25s ease;
     flex-direction: column;
 }
+@media (min-width: 768px) {
+  .nav-menu {
+    overflow: visible;
+  }
+}
 
 .nav-menu.active {
     max-height: 320px;
@@ -126,8 +131,10 @@ header {
 /* Estilos generales */
 .cart-link {
   display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  flex: 0 1 auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  min-width: 0;
   font-size: 1rem;
   color: #a0522d;
   font-weight: 600;
@@ -1046,8 +1053,7 @@ p {
   text-align: right;
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 2rem;
-  padding-top: 1rem;
+  padding: 1rem;
   border-top: 2px solid #ddd;
   color: #222;
 }
