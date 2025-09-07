@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet"> <!--Importo las fuentes desde la web de GoogleFonts-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
+
+            <button class="nav-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="/productos.html">Colección</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="catalogo-encabezado">
+            <h1 class="catalogo-titulo">Nuestra Colección</h1>
+            <p class="catalogo-bajada">
+                Cada pieza es única, creada con amor y dedicación por nuestros artesanos.
+                Descubre muebles que se convertirán en parte de tu historia familiar.
+            </p>
+
+            <div class="catalogo-busqueda">
+                <input type="search" class="catalogo-busqueda-input" id="buscar-productos" placeholder="Buscar Productos...">
+            </div>
+        </section>
+        <div id="catalogo" class="catalogo">
+            <!-- Los productos se cargan desde catalogo.js -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <section class="footer-brand">
+
+            <h2>Hermanos Jota</h2>
+            <p>
+            Muebles que cuentan historias: tradición, innovación y sustentabilidad.
+            Cada pieza honra la herencia de la artesanía.
+            </p>
+
+            
+        </section>
+
+        <section class="footer-nav">
+            <h3>Navegación</h3>
+            <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="/productos.html">Colección</a></li>
+                <li><a href="#">Sustentabilidad</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+            </nav>
+        </section>
+
+        <section class="footer-contact">
+            <h3>Contacto</h3>
+            <address>
+            <p>Av. San Juan 2847</p>
+            <p>San Cristóbal, CABA</p>
+            <p>+54 11 4567-8900</p>
+            <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+            </address>
+        </section>
+
+        <div class="footer-bottom">
+            <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/catalogo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
