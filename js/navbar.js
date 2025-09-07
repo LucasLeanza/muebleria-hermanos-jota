@@ -6,3 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("active");
   });
 });
+
+import { actualizarCarrito } from "./cartHelper.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarCarrito(); // asegura que el contador se pinte al entrar a cualquier vista
+});
