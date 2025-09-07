@@ -68,6 +68,7 @@ header {
     visibility: hidden;
     pointer-events: none;
     transition: max-height .3s ease, opacity .25s ease, visibility .25s ease;
+    flex-direction: column;
 }
 
 .nav-menu.active {
@@ -418,6 +419,95 @@ p {
     letter-spacing: 0.08em;
 }
 
+/* ===========================
+   FORMULARIO DE CONTACTO
+=========================== */
+.card-box {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+#contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contacto label {
+  font-weight: 500;
+  color: #7a3e23;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+#contacto input,
+#contacto textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+  outline: none;
+  border-color: #a0522d;
+  box-shadow: 0 0 4px rgba(160,82,45,0.3);
+}
+
+#contacto button {
+  background: #a0522d;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contacto button:hover {
+  background: #7a3e23;
+}
+
+/* ===========================
+   SECCIÓN LOCALES
+=========================== */
+.locales {
+  text-align: center;
+}
+
+.locales h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #a0522d;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #d4a437;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.locales address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #4a4a7a;
+  font-size: 1rem;
+}
+
+.locales address p {
+  margin: 0.3rem 0;
+}
+
 /* ========================================
    MEDIA QUERY - DESKTOP 
 ======================================== */
@@ -449,6 +539,7 @@ p {
     pointer-events: auto;
     display: flex;
     gap: 1.5rem;
+    flex-direction: row;
   }
 
   .nav-menu li {
@@ -551,5 +642,21 @@ p {
   .footer p, 
   .footer a {
     font-size: 1rem;
+  }
+
+  #contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  #contacto textarea {
+    grid-column: 1 / 3;
+  }
+
+  #contacto button {
+    grid-column: 1 / 3;
+    justify-self: center;
+    min-width: 180px;
   }
 }

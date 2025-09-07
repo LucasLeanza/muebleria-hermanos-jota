@@ -6,20 +6,25 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <title>Contacto</title>
 </head>
-
+<body>
   <header class="header">
-    <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
         <nav class="nav">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Colección</a></li>
+            <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
+
+            <button class="nav-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/productos.html">Colección</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
-<body>
+
   <main>
-  <form id="contacto"> <!-- action = "enviar datos backend" method = "POST"-->
+  <form id="contacto" class="card-box"> <!-- action = "enviar datos backend" method = "POST"-->
     <label for="nombre">Nombre:</label><br>
     <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" required><br><br>
 
@@ -35,17 +40,57 @@
   <p id="resultado"></p>
   </main>
 
-  <!-- Enlazamos el archivo de JS -->
-  <script src="/js/contacto.js"></script>
-</body>
 
-<footer>
-    <section>
-            <h3>Locales</h3>
+  <section class="locales card-box">
+      <h3>Locales</h3>
+        <address>
+            <p>Av San Juan 2847</p>
+            <p>San Cristóbal, CABA</p>
+        </address>
+    </section>
+
+<footer class="footer">
+        <section class="footer-brand">
+
+            <h2>Hermanos Jota</h2>
+            <p>
+            Muebles que cuentan historias: tradición, innovación y sustentabilidad.
+            Cada pieza honra la herencia de la artesanía.
+            </p>
+
+            
+        </section>
+
+        <section class="footer-nav">
+            <h3>Navegación</h3>
+            <nav>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/productos.html">Colección</a></li>
+                <li><a href="#">Sustentabilidad</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            </nav>
+        </section>
+
+        <section class="footer-contact">
+            <h3>Contacto</h3>
             <address>
-                <p>Av San Juan 2847</p>
-                <p>San Cristóbal, CABA</p>
+            <p>Av. San Juan 2847</p>
+            <p>San Cristóbal, CABA</p>
+            <p>+54 11 4567-8900</p>
+            <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
             </address>
         </section>
-</footer>
+
+        <div class="footer-bottom">
+            <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+  <!-- Enlazamos el archivo de JS -->
+  <script src="/js/contacto.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
 </html>
