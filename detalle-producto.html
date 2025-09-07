@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/619fea8e59.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/619fea8e59.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Detalle del Producto</title>
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
+      <nav class="nav">
+        <a href="index.html"><img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo" /></a>
 
-            <a href="/carrito.html" class="cart-link" aria-label="Ver carrito">
-                 <i class="fa-solid fa-shopping-cart"></i>
-                 Carrito (<span id="cart-count">0</span>)
-             </a>
+        <a href="/carrito.html" class="cart-link" aria-label="Ver carrito">
+          <i class="fa-solid fa-shopping-cart"></i>
+          <span class="cart-text">Carrito</span>
+          (<span id="cart-count">0</span>)
+        </a>
 
-            <button class="nav-toggle" aria-label="Abrir menú">
-                ☰
-            </button>
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
-            <ul class="nav-menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="/catalogo.html">Colección</a></li>
-                <li><a href="/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="/catalogo.html">Colección</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
-
     <main>
-        <div id="detalle-producto"></div>
+      <div id="detalle-producto"></div>
     </main>
 
     <footer class="footer">
-        <section class="footer-brand">
+      <section class="footer-brand">
+        <h2>Hermanos Jota</h2>
+        <p>
+          Muebles que cuentan historias: tradición, innovación y
+          sustentabilidad. Cada pieza honra la herencia de la artesanía.
+        </p>
+      </section>
 
-            <h2>Hermanos Jota</h2>
-            <p>
-            Muebles que cuentan historias: tradición, innovación y sustentabilidad.
-            Cada pieza honra la herencia de la artesanía.
-            </p>
+      <section class="footer-nav">
+        <h3>Navegación</h3>
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="/catalogo.html">Colección</a></li>
+            <li><a href="#">Sustentabilidad</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </section>
 
-            
-        </section>
+      <section class="footer-contact">
+        <h3>Contacto</h3>
+        <address>
+          <p>Av. San Juan 2847</p>
+          <p>San Cristóbal, CABA</p>
+          <p>+54 11 4567-8900</p>
+          <p>
+            <a href="mailto:info@hermanosjota.com.ar"
+              >info@hermanosjota.com.ar</a
+            >
+          </p>
+        </address>
+      </section>
 
-        <section class="footer-nav">
-            <h3>Navegación</h3>
-            <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="/catalogo.html">Colección</a></li>
-                <li><a href="#">Sustentabilidad</a></li>
-                <li><a href="/contacto.html">Contacto</a></li>
-            </ul>
-            </nav>
-        </section>
-
-        <section class="footer-contact">
-            <h3>Contacto</h3>
-            <address>
-            <p>Av. San Juan 2847</p>
-            <p>San Cristóbal, CABA</p>
-            <p>+54 11 4567-8900</p>
-            <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
-            </address>
-        </section>
-
-        <div class="footer-bottom">
-            <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
     <script type="module" src="js/cartHelper.js"></script>
     <script type="module" src="js/detalle-producto.js"></script>
     <script type="module" src="js/navbar.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -132,9 +132,7 @@ header {
   color: #a0522d;
   font-weight: 600;
   text-decoration: none;
-  margin-left: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;
-  margin-left: 200px;
 }
 
 .cart-link:hover {
@@ -147,13 +145,17 @@ header {
 }
 
 #cart-count {
-  font-weight: bold;
+  display: inline-block;
+  min-width: 1.6em;
+  text-align: center;
   color: #7a3e23;
 }
 
 /* En mobile oculto el texto */
 .cart-text {
-  display: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* En desktop muestro texto */
@@ -975,14 +977,14 @@ p {
 /* Lista de productos en el carrito */
 .carrito-lista {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 1.5rem;
+  margin: 0 auto;
 }
 
 .carrito-lista li {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -1002,7 +1004,7 @@ p {
 
 /* Info del producto */
 .carrito-info {
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .carrito-info h3 {

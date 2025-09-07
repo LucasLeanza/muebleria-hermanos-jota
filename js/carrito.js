@@ -1,4 +1,4 @@
-import { actualizarCarrito } from "./cartHelper.js"; 
+import { actualizarCarrito } from "./cartHelper.js";
 
 const cont = document.getElementById("carrito-container");
 const totalDiv = document.getElementById("total-carrito");
@@ -54,7 +54,7 @@ function renderCarrito() {
     // Precio
     const spanPrecio = document.createElement("span");
     spanPrecio.className = "precio";
-    spanPrecio.textContent = `$${p.precio * p.cantidad}`;
+    spanPrecio.textContent = `$${(p.precio * p.cantidad).toLocaleString()}`;
 
     // Botón eliminar
     const btnBorrar = document.createElement("button");
@@ -100,5 +100,5 @@ function actualizarCarritoLocal(cart) {
 
 function actualizarTotal(cart) {
   const total = cart.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-  if (totalDiv) totalDiv.textContent = `Total: $${total}`;
+  if (totalDiv) totalDiv.textContent = `Total: $${total.toLocaleString()}`;
 }

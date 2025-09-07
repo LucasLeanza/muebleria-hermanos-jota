@@ -1,34 +1,33 @@
 import { agregarAlCarrito, actualizarCarrito } from "./cartHelper.js";
 
-
 let productosGlobales = [];
 
 //Funcion para limpiar el contenedor de catalogo
 function limpiarContenedor() {
-    const contenedor = document.getElementById("catalogo");
-    if (!contenedor) return
-    //Elimino todos los nodos hijos del catálogo
-    while(contenedor.firstChild) {
-        contenedor.removeChild(contenedor.firstChild);
-    }
+  const contenedor = document.getElementById("catalogo");
+  if (!contenedor) return;
+  //Elimino todos los nodos hijos del catálogo
+  while (contenedor.firstChild) {
+    contenedor.removeChild(contenedor.firstChild);
+  }
 }
 
 function cargarCatalogo(productos) {
-    const contenedor = document.getElementById("catalogo");
-    if (!contenedor) return;
+  const contenedor = document.getElementById("catalogo");
+  if (!contenedor) return;
 
-    //Limpio el contenedor antes de renderizarlo
-    limpiarContenedor();
+  //Limpio el contenedor antes de renderizarlo
+  limpiarContenedor();
 
-    productos.forEach(producto => {
-        //Creo la tarjeta
+  productos.forEach((producto) => {
+    //Creo la tarjeta
     let card = document.createElement("div");
     card.classList.add("productos-card");
-    
+
     //Imagen
     //Creo la imagen como un <a> para que al hacer click en la foto también lleve a la página del producto.
     let imgContainer = document.createElement("a");
-    imgContainer.href = `detalle-producto?id=${producto.id}`
+    imgContainer.href = `detalle-producto?id=${producto.id}`;
     imgContainer.classList.add("img-container");
 
     let img = document.createElement("img");
@@ -72,16 +71,16 @@ function cargarCatalogo(productos) {
     botonCarrito.classList.add("agregar-carrito");
 
     botonCarrito.addEventListener("click", () => {
-  const productoCarrito = {
-    id: producto.id,
-    nombre: producto.nombre,
-    precio: producto.precio,
-    descripcion: producto.descripcion[0],
-    imagen: producto.img
-  };
-  agregarAlCarrito(productoCarrito);
-  actualizarCarrito();
-});
+      const productoCarrito = {
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        descripcion: producto.descripcion[0],
+        imagen: producto.img,
+      };
+      agregarAlCarrito(productoCarrito);
+      actualizarCarrito();
+    });
 
     //Agrego los botones al div .botones
     botones.appendChild(botonDetalles);
@@ -94,18 +93,18 @@ function cargarCatalogo(productos) {
 
     //Agrego la tarjeta al contenedor
     contenedor.appendChild(card);
-    })
+  });
 }
 
 fetch("../data/productos.json")
-    .then(res => res.json())
-    .then(productos => {
-        productosGlobales = productos;
-        cargarCatalogo(productosGlobales);
+  .then((res) => res.json())
+  .then((productos) => {
+    productosGlobales = productos;
+    cargarCatalogo(productosGlobales);
 
-        actualizarCarrito();
-    })
-    .catch(error => console.error("Error al cargar productos:", error));
+    actualizarCarrito();
+  })
+  .catch((error) => console.error("Error al cargar productos:", error));
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputBuscador = document.getElementById("buscar-productos");
@@ -116,7 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const texto = inputBuscador.value.toLowerCase();
 
     // Filtro los productos que coincidan con el input
-    const filtrados = productosGlobales.filter(p => p.nombre.toLowerCase().includes(texto));
+    const filtrados = productosGlobales.filter((p) =>
+      p.nombre.toLowerCase().includes(texto)
+    );
 
     // Renderizo unicamente los productos filtrados
     cargarCatalogo(filtrados);

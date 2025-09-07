@@ -1,16 +1,15 @@
 import { agregarAlCarrito, actualizarCarrito } from "./cartHelper.js";
 
-
 //Fetch de productos.json
 fetch("data/productos.json")
-  .then(res => res.json())
-  .then(productos => {
-        // Obtener el id desde la URL
+  .then((res) => res.json())
+  .then((productos) => {
+    // Obtener el id desde la URL
     const params = new URLSearchParams(window.location.search);
     const id = parseInt(params.get("id"));
 
-    // Buscar el producto en el array 
-    const producto = productos.find(producto => producto.id === id);
+    // Buscar el producto en el array
+    const producto = productos.find((producto) => producto.id === id);
 
     // Contenedor donde se mostrará el detalle
     const contenedor = document.getElementById("detalle-producto");
@@ -36,12 +35,11 @@ fetch("data/productos.json")
     let lista = document.createElement("ul");
     lista.classList.add("descripcion-lista");
 
-    producto.descripcion.forEach(item => {
+    producto.descripcion.forEach((item) => {
       let li = document.createElement("li");
       li.textContent = item;
       lista.appendChild(li);
     });
-
 
     // Precio
     let precio = document.createElement("p");
@@ -54,16 +52,16 @@ fetch("data/productos.json")
     boton.classList.add("btn-carrito");
 
     boton.addEventListener("click", () => {
-  const productoCarrito = {
-    id: producto.id,
-    nombre: producto.nombre,
-    precio: producto.precio,
-    descripcion: producto.descripcion[0],
-    imagen: producto.img
-  };
-  agregarAlCarrito(productoCarrito);
-  actualizarCarrito(); 
-  });
+      const productoCarrito = {
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        descripcion: producto.descripcion[0],
+        imagen: producto.img,
+      };
+      agregarAlCarrito(productoCarrito);
+      actualizarCarrito();
+    });
 
     // Armar estructura
     info.append(titulo, lista, precio, boton);
@@ -72,4 +70,4 @@ fetch("data/productos.json")
 
     actualizarCarrito();
   })
-  .catch(error => console.error("Error al cargar productos:", error));
+  .catch((error) => console.error("Error al cargar productos:", error));
