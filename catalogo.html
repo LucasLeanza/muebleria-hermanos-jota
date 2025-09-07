@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet"> <!--Importo las fuentes desde la web de GoogleFonts-->
+    <script src="https://kit.fontawesome.com/619fea8e59.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="img/logo.svg">
     <title>Document</title>
@@ -14,6 +15,12 @@
     <header class="header">
         <nav class="nav">
             <img src="img/logo.svg" alt="Logo de Hermanos Jota" class="logo">
+
+             <a href="/carrito.html" class="cart-link" aria-label="Ver carrito">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-text">Carrito</span>
+                (<span id="cart-count">0</span>)
+            </a>
 
             <button class="nav-toggle" aria-label="Abrir menú">
                 ☰
@@ -81,7 +88,8 @@
             <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="js/catalogo.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/catalogo.js"></script>
+    <script type="module"  src="js/main.js"></script>
+    <script type="module" src="js/cartHelper.js"></script>
 </body>
 </html>

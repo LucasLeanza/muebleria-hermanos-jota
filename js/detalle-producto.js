@@ -1,5 +1,8 @@
+import { agregarAlCarrito, actualizarCarrito } from "./cartHelper.js";
+
+
 //Fetch de productos.json
-fetch("../data/productos.json")
+fetch("data/productos.json")
   .then(res => res.json())
   .then(productos => {
         // Obtener el id desde la URL
@@ -50,9 +53,23 @@ fetch("../data/productos.json")
     boton.textContent = "Agregar al carrito";
     boton.classList.add("btn-carrito");
 
+    boton.addEventListener("click", () => {
+  const productoCarrito = {
+    id: producto.id,
+    nombre: producto.nombre,
+    precio: producto.precio,
+    descripcion: producto.descripcion[0],
+    imagen: producto.img
+  };
+  agregarAlCarrito(productoCarrito);
+  actualizarCarrito(); 
+  });
+
     // Armar estructura
     info.append(titulo, lista, precio, boton);
     card.append(img, info);
     contenedor.appendChild(card);
+
+    actualizarCarrito();
   })
   .catch(error => console.error("Error al cargar productos:", error));

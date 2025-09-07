@@ -1,3 +1,6 @@
+import { agregarAlCarrito, actualizarCarrito } from "./cartHelper.js";
+
+
 let productosGlobales = [];
 
 //Funcion para limpiar el contenedor de catalogo
@@ -68,6 +71,18 @@ function cargarCatalogo(productos) {
     botonCarrito.textContent = "Agregar al Carrito";
     botonCarrito.classList.add("agregar-carrito");
 
+    botonCarrito.addEventListener("click", () => {
+  const productoCarrito = {
+    id: producto.id,
+    nombre: producto.nombre,
+    precio: producto.precio,
+    descripcion: producto.descripcion[0],
+    imagen: producto.img
+  };
+  agregarAlCarrito(productoCarrito);
+  actualizarCarrito();
+});
+
     //Agrego los botones al div .botones
     botones.appendChild(botonDetalles);
     botones.appendChild(botonCarrito);
@@ -87,6 +102,8 @@ fetch("../data/productos.json")
     .then(productos => {
         productosGlobales = productos;
         cargarCatalogo(productosGlobales);
+
+        actualizarCarrito();
     })
     .catch(error => console.error("Error al cargar productos:", error));
 
