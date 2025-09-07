@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet"> <!--Importo las fuentes desde la web de GoogleFonts-->
+    <link rel="stylesheet" href="style-alan.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="catalogo-encabezado">
+            <h1 class="catalogo-titulo">Nuestra Colección</h1>
+            <p class="catalogo-bajada">
+                Cada pieza es única, creada con amor y dedicación por nuestros artesanos.
+                Descrube muebles que se convertirán en parte de tu historia familiar.
+            </p>
+
+            <div class="catalogo-busqueda">
+                <input type="search" class="catalogo-busqueda-input" id="buscar-productos" placeholder="Buscar Productos...">
+            </div>
+        </section>
+        <div id="productos-container" class="productos-container">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hermanos Jota. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="data-alan.js"></script>
+    <script src="detalleproducto-alan.js"></script>
+
+</body>
+</html>
