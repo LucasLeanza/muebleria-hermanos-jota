@@ -50,25 +50,26 @@ Se trata de un e-commerce ficticio de muebles artesanales, con catálogo dinámi
 - **Font Awesome** (iconos).
 
 ## 📂 Estructura del proyecto
-
-muebleria-hermanos-jota/
-├── css/
-│ └── styles.css
-├── data/
-│ └── productos.json
-├── img/
-│ └── ... (logo y productos)
-├── js/
-│ ├── catalogo.js
-│ ├── detalle-producto.js
-│ ├── carrito.js
-│ ├── cartHelper.js
-│ └── navbar.js
-├── index.html
-├── catalogo.html
-├── detalle-producto.html
-├── carrito.html
-└── README.md
+```
+📂muebleria-hermanos-jota/
+├── 📂css/
+│ └── 🎨styles.css
+├── 📂data/
+│ └── 📑productos.json
+├── 📂img/
+│ └── ... 🖼️(logo y productos)
+├── 📂js/
+│ ├── ⚙️catalogo.js
+│ ├── ⚙️detalle-producto.js
+│ ├── ⚙️carrito.js
+│ ├── ⚙️cartHelper.js
+│ └── ⚙️navbar.js
+├── 🌐index.html
+├── 🌐catalogo.html
+├── 🌐detalle-producto.html
+├── 🌐carrito.html
+└── 🗒️README.md
+```
 
 ## 📝Notas
 
