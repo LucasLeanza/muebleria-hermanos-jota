@@ -191,7 +191,7 @@ catalogoMuebles.forEach(producto => {
     
     //Imagen
     let imgContainer = document.createElement("a");
-    imgContainer.href = `detalleproducto.html?id=${producto.id}`; // 
+    imgContainer.href = `detalleproducto-alan.html?id=${producto.id}`;  
     imgContainer.classList.add("img-container");
 
     let img = document.createElement("img");
@@ -222,7 +222,7 @@ catalogoMuebles.forEach(producto => {
 
     let botonDetalles = document.createElement("a");
     botonDetalles.textContent = "Ver Detalles";
-    botonDetalles.href = `detalleproducto.html?id=${producto.id}`; 
+    botonDetalles.href = `detalleproducto-alan.html?id=${producto.id}`; 
     botonDetalles.classList.add("ver-detalles");
 
     let botonCarrito = document.createElement("button");
