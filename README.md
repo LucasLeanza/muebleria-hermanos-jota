@@ -1,44 +1,76 @@
-# Proyecto "Mueblería Hermanos Jota"
+## 🪑 Mueblería Hermanos Jota
 
-## Integrantes
+Proyecto del curso **Full Stack Developer de ITBA**.  
+Se trata de un e-commerce ficticio de muebles artesanales, con catálogo dinámico, detalle de producto y carrito de compras persistente en **sessionStorage**.
 
-- Lucas Leanza
-- Alan Prado
-- Lautaro Appelhans
-- Karen Gerez
-- Matias Banega
 
-## Funcionalidades
+## 👥 Integrantes
 
-- Mostrar un catálogo de productos con imagen, nombre, descripción y precio.
-- Navegar a una vista de detalle de producto con información ampliada.
-- Añadir productos al carrito, aumentando la cantidad si ya existe el producto.
-- Modificar la cantidad de productos dentro del carrito desde la página del carrito.
-- Eliminar productos del carrito.
-- Contador de productos en el carrito visible en la barra de navegación.
-- Cálculo del total del carrito en tiempo real.
-- Manejo de errores al cargar los productos desde el JSON.
+- Lucas Leanza (Catálogo, organización del código y resolver bugs de responsividad)
+- Alan Prado (Página de Detalle de Productos)
+- Lautaro Appelhans (CSS de todas las páginas, organización del código e integración del carrito)
+- Karen Gerez (Estructura del Index y maqueta del diseño)
+- Matias Banega (Página de Contacto)
 
-## Tecnologías utilizadas
+## 🌟 Funcionalidades principales
 
-- **HTML5**: Estructura de las páginas.
-- **CSS3**: Estilos y diseño responsivo mediante grid y flexbox.
-- **JavaScript (ES6)**: Lógica de interacción, manejo del DOM, fetch y almacenamiento en sessionStorage.
-- **sessionStorage**: Para mantener el estado del carrito durante la sesión.
-- **Fetch API**: Para consumir un archivo JSON con los productos.
+- **Páginas:**
+  - `index.html`: Home / presentación de la marca.
+  - `catalogo.html`: Catálogo de productos dinámico.
+  - `detalle-producto.html`: Detalle de cada producto.
+  - `carrito.html`: Carrito de compras.
 
-## Estructura del proyecto
+- **Catálogo:**
+  - Productos cargados desde `data/productos.json` con **Fetch API**.
+  - Cards con imagen, nombre, descripción, precio y botones.
+  - Barra de búsqueda para filtrar productos.
 
-- `index.html`: Página principal.
-- `productos.html`: Página con el catálogo de productos.
-- `detalleProducto.html`: Página de detalle de un producto individual.
-- `carrito.html`: Página que muestra los productos agregados al carrito.
-- `css/styles.css`: Archivo con todos los estilos del proyecto.
-- `js/data.js`: Archivo con los productos y la lógica de carga de los mismos.
-- `js/navbar.js`: Lógica de la barra desplegable de navegación.
-- `js/contacto.js`: Lógica de envío del formulario
+- **Detalle de producto:**
+  - Imagen ampliada, nombre, precio y descripción.
+  - Botón para agregar al carrito.
 
-## Notas
+- **Carrito de compras:**
+  - Visualización de los productos agregados.
+  - Incrementar/decrementar cantidades.
+  - Eliminar productos.
+  - Cálculo automático del total.
+  - Persistencia con `sessionStorage`.
+  - Contador de productos en el navbar.
+
+- **Responsive design:**
+  - Mobile first, adaptado a tablets y desktop.
+  - Layouts flexibles con Flexbox y Grid CSS.
+
+## 🛠️ Tecnologías utilizadas
+
+- **HTML5**: estructura semántica.  
+- **CSS3**: mobile-first, variables, Flexbox, Grid.  
+- **JavaScript (ES6+)**: módulos, manipulación del DOM, Fetch API, sessionStorage.  
+- **Google Fonts** (Inter y Playfair Display).  
+- **Font Awesome** (iconos).
+
+## 📂 Estructura del proyecto
+
+muebleria-hermanos-jota/
+├── css/
+│ └── styles.css
+├── data/
+│ └── productos.json
+├── img/
+│ └── ... (logo y productos)
+├── js/
+│ ├── catalogo.js
+│ ├── detalle-producto.js
+│ ├── carrito.js
+│ ├── cartHelper.js
+│ └── navbar.js
+├── index.html
+├── catalogo.html
+├── detalle-producto.html
+├── carrito.html
+└── README.md
+
+## 📝Notas
 
 - Todas las operaciones se realizan en el navegador, sin backend.
 - Los datos del carrito se mantienen solo durante la sesión, gracias a `sessionStorage`.
