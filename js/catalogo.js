@@ -25,7 +25,7 @@ function cargarCatalogo(productos) {
     //Imagen
     //Creo la imagen como un <a> para que al hacer click en la foto también lleve a la página del producto.
     let imgContainer = document.createElement("a");
-    imgContainer.href = "#"
+    imgContainer.href = `detalle-producto?id=${producto.id}`
     imgContainer.classList.add("img-container");
 
     let img = document.createElement("img");
@@ -47,7 +47,7 @@ function cargarCatalogo(productos) {
 
     let precio = document.createElement("p");
     precio.classList.add("producto-precio");
-    precio.textContent = `$${producto.precio.toLocaleString()}`
+    precio.textContent = `$${producto.precio.toLocaleString()}`;
 
     //Agrego nombre, precio y descripcion al div .info
     info.appendChild(nombre);
@@ -59,7 +59,8 @@ function cargarCatalogo(productos) {
     botones.classList.add("producto-botones");
 
     //Creo cada boton
-    let botonDetalles = document.createElement("button");
+    let botonDetalles = document.createElement("a");
+    botonDetalles.href = `detalle-producto.html?id=${producto.id}`;
     botonDetalles.textContent = "Ver Detalles";
     botonDetalles.classList.add("ver-detalles");
 
